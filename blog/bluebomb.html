@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wii Exploits Guide - Bluebomb</title>
+  <!-- make sure path and case match your filesystem -->
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <nav class="topnav">
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="socials.html">Socials</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <main class="content">
+    <h1>Wii Exploits Guide — Bluebomb</h1>
+
+    <!-- use a <p> or <time> instead of invalid <sp> -->
+    <p class="post-meta">First posted <time datetime="2023-07">July 2023</time></p>
+
+    <p>
+      Bluebomb is a known exploit in the Nintendo Wii's Bluetooth stack, allowing it
+      to run unauthorized code. It is currently used as a method to fix the Banner
+      Brick, and is the only known method of modding a Wii Mini.
+    </p>
+
+    <p>This guide will show you how to perform this exploit to launch the HackMii installer.</p>
+
+    <h2>You will need:</h2>
+    <ul>
+      <li>A USB drive</li>
+      <li>A computer with Bluetooth capabilities (or a compatible adapter)</li>
+      <li>Ubuntu or a Live USB environment</li>
+      <li>An Internet connection</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <h1>Getting started...</h1>
+    <p>If you havent already, install Ubuntu or a Ubuntu based Linux distro, if you do
+       not want to install it on your computer you can boot from the installation media
+       and select the option to try ubuntu without installing</p>
+
+<p>
+  You will also need to download the HackMii installer from 
+  <a href="https://bootmii.org/download/" target="_blank">https://bootmii.org/download/</a>
+  and unzip the contents of the zip file onto the root of a FAT32 formatted USB drive.
+</p>
+
+<p>&nbsp;</p>
+
+    <h1>Running the exploit</h1>
+    <p>Copy the hackmii installer onto the root of your USB drive then plug it into USB port 0
+       on your Wii (If your wii is on its side this will be the bottom port, If your wii is
+        standing vertically itll be the port on the left)</p>
+    <p>Boot into your Ubuntu installation and connect to the internet, then open the terminal 
+      and enter the following commands: </p>
+
+    <p>wget https://wii.guide/assets/files/bluebomb-helper.sh</p>
+    <p>chmod +x bluebomb-helper.sh</p>
+    <p>./bluebomb-helper.sh</p>
+
+<p>&nbsp;</p>
+
+<p>Bluebomb will download some files so wait a bit</p>
+<p>When its finished it will ask you some questions, follow the prompts to answer the 
+  questions. After that the exploit will run. When it has finished you will get a prompt
+to re-enable the bluetooth service. If bluebomb has failed to run (which it likely will
+on the first try), select no and re-run the script</p>
+<p>When the script prompts "waiting to accept", the script is looking for your Wii in wiimote
+  pairing mode. Go to your Wii and press the sync button a handful of times, this is the red
+   button located where the SD card slot is.</p>
+<p>You will see the connection has succeeded once the script starts uploading the payload. Once
+  complete, your Wii will display the bluebomb credits, before proceeding into the HackMii installer </p>
+<p>Once you see the hackmii's scam warning message, you will know you're in! From there just go through
+   the hackmii installer as you would any other exploit and install bootmii and the homebrew channel </p>
+
+<p>&nbsp;</p>
+
+    <h1>Finishing touches</h1>
+    <p>If you are modding your Wii using this method, you should just install hbc and you're
+      good to go.</p>
+    <p>Alternatively if you are using this to fix a Banner Brick, proceed to installing the
+      Homebrew Channel and the HackMii installer will exit to the homebrew channel where you
+      can fix whatever issue got you into this mess. You could also replace the files on your USB
+      for the hackmii installer with any single tool that can help you.
+    </p>
+
+  </main>
+</body>
+</html>
