@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--Why are you here?-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is dumbfoxfurry's actual website! Also known as foxfurrytrash and vlcinsanityplayer.">
+    <title>afoxes.space - contact me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <nav class="topnav">
+    <a href="/index.html">Home</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/contact.html">Contact</a>
+    <a href="/socials.html">Socials</a>
+    <a href="/about.html">About</a>
+  </nav>
+
+<h1>Wii Fit MET to calorie calculator</h1>
+
+<p>
+<label for="weight">How many METs was the activity?</label>
+
+<input type="number" id="mets" name="mets" min="1" max="999" />
+</p>
+
+<p>
+<label for="weight">Your weight in Kilograms (KG):</label>
+
+<input type="number" id="weight" name="weight" min="1" max="999" />
+</p>
+
+<p>
+<label for="hours">How long were you doing the activity (hours):</label>
+
+<input type="number" id="hours" name="hours" min="1" max="999" />
+</p>
+
+<button onclick="calculateEquation()">Calculate</button>
+
+<p>Result: <span id="result"></span></p>
+
+<script>
+function calculateEquation() {
+    // Get values
+    const mets = parseFloat(document.getElementById("mets").value);
+    const weight = parseFloat(document.getElementById("weight").value);
+    const hours = parseFloat(document.getElementById("hours").value);
+
+    // Validate
+    if (isNaN(mets) || isNaN(weight) || isNaN(hours)) {
+        document.getElementById("result").textContent = "Please enter all values.";
+        return;
+    }
+
+    // Calculate calories burned
+    const calories = mets * weight * hours ;
+
+    // Display (rounded to 2 decimal places)
+    document.getElementById("result").textContent = calories.toFixed(2) + " calories burned";
+}
+</script>
